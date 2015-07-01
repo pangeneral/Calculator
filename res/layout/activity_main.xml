@@ -1,0 +1,81 @@
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="20sp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/background_light"
+    tools:context="com.pangeneral.calculator.MainActivity" >
+    <EditText android:id="@+id/Et_result"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:inputType="number" 
+	    android:text="@string/zero">
+	</EditText>
+	<TableLayout android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:gravity="center_horizontal">
+	    <TableRow>
+	        <Button android:id="@+id/Btn_Seven"
+	            android:text="@string/seven">
+	        </Button>
+	      	<Button android:id="@+id/Btn_Eight"
+	            android:text="@string/eight">
+	        </Button>
+	        <Button android:id="@+id/Btn_Nine"
+	            android:text="@string/nine">
+	        </Button>
+	        <Button android:id="@+id/Btn_Mutiply"
+	            android:text="@string/mutiply">
+	        </Button>
+	    </TableRow>
+	    <TableRow>
+	        <Button android:id="@+id/Btn_Four"
+	            android:text="@string/four">
+	        </Button>
+	      	<Button android:id="@+id/Btn_Five"
+	            android:text="@string/five">
+	        </Button>
+	        <Button android:id="@+id/Btn_Six"
+	            android:text="@string/six">
+	        </Button>
+	        <Button android:id="@+id/Btn_Minus"
+	            android:text="@string/minus">
+	        </Button>
+	    </TableRow>
+	    <TableRow>
+	        <Button android:id="@+id/Btn_One"
+	            android:text="@string/one">
+	        </Button>
+	      	<Button android:id="@+id/Btn_Two"
+	            android:text="@string/two">
+	        </Button>
+	        <Button android:id="@+id/Btn_Three"
+	            android:text="@string/three">
+	        </Button>
+	        <Button android:id="@+id/Btn_Plus"
+	            android:text="@string/plus">
+	        </Button>
+	    </TableRow>
+	    <TableRow>
+	        <Button android:id="@+id/Btn_Zero"
+	            android:text="@string/zero">
+	        </Button>
+	      	<Button android:id="@+id/Btn_Point"
+	            android:text="@string/point">
+	        </Button>
+	        <Button android:id="@+id/Btn_Divine"
+	            android:text="@string/divine">
+	        </Button>
+	        <Button android:id="@+id/Btn_Equal"
+	            android:text="@string/equal">
+	        </Button>
+	    </TableRow>
+	</TableLayout>
+
+
+</LinearLayout>
