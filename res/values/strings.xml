@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Calculator</string>
+    <string name="app_name">Pangeneral的计算器</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 	<string name="one">1</string>
@@ -20,4 +20,6 @@
 	<string name="divine">/</string>
 	<string name="point">.</string>
 	<string name="equal">=</string>
+	<string name="cancel">DEL</string>
+	<string name="initial">C</string>
 </resources>

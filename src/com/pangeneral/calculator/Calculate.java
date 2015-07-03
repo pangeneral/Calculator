@@ -7,7 +7,11 @@ import java.util.Map;
 import java.util.Stack;
 
 
-
+/**
+ * 实现全部的计算操作
+ * @author Pangeneral
+ *
+ */
 public class Calculate {
 	
 	private List<Object> expressionList= new ArrayList<Object>();//存储转化的后缀表达式
@@ -19,6 +23,7 @@ public class Calculate {
 	
 	
 	public Calculate(){
+		this.initialization();
 		leftPri.put('+',2);
 		leftPri.put('-',2);
 		leftPri.put('*',4);
@@ -30,16 +35,39 @@ public class Calculate {
 	}
 	
 	/**
+	 * 计算给定的输入串的结果
+	 * @param inputStr
+	 * @return
+	 */
+	public String calculate_Input_String(String inputStr){
+		this.transform_From_Middle_To_Appendix(inputStr);
+		String result = this.calculate_Appendix_Expression()+"";
+		if( result.substring(result.indexOf(".")+1).equals("0"))
+			return result.substring(0,result.length()-2);
+		else
+			return result;
+	}
+	
+	/**
+	 * 初始化计算类
+	 */
+	public void initialization(){
+		expressionList.clear();
+		operStack.clear();
+		resultStack.clear();
+	}
+	
+	/**
 	 * 将中缀表达式转化为后缀表达式
 	 * @param inputStr 中缀表达式
 	 */
-	public void transform_From_Middle_To_Appendix(String inputStr){
+	private void transform_From_Middle_To_Appendix(String inputStr){
 		int begin = 0;
 		for(int i=0;i < inputStr.length();i++ ){
-			if( Justify.isOperation(inputStr.charAt(i))){
+			if( Justify.isOperation(inputStr.charAt(i))){//当前的字符是运算符，即+,-,*,/中的一个
 				if( inputStr.charAt(i) == '-' && Justify.isOperation(inputStr.charAt(i-1)) )
 					continue;
-				expressionList.add(Double.valueOf(inputStr.substring(begin, i-1)));
+				expressionList.add(Double.valueOf(inputStr.substring(begin, i)));
 				begin=i+1;
 				//如果操作数栈不为空且表达式运算符优先级比栈顶运算符优先级小，那么一直进行出栈操作，并将运算符加入到后缀表达式中
 				while(!this.operStack.isEmpty() && rightPri.get(inputStr.charAt(i)) < leftPri.get(this.operStack.peek()))
@@ -54,7 +82,44 @@ public class Calculate {
 			expressionList.add(this.operStack.pop());
 	}
 	
-	public void calculate_appendix_expression(){
+	/**
+	 * 计算后缀表达式的值
+	 */
+	private Double calculate_Appendix_Expression(){
+		try{
+			for(int i=0;i < expressionList.size();i++){
+				if( expressionList.get(i) instanceof Double){
+					resultStack.push((Double)expressionList.get(i));
+				}
+				else{
+					Double secondNumber = resultStack.pop();
+					Double firstNumber = resultStack.pop();
+					resultStack.push(this.calculate_During_Process_Appendix_Expression(firstNumber,secondNumber,(Character)expressionList.get(i)));		
+				}
+			}
+			return resultStack.pop();
+		}
+		catch(Exception e){
+			return null;
+		}
 		
+	}
+	
+	/**
+	 * 计算两个数的运算结果
+	 */
+	private Double calculate_During_Process_Appendix_Expression(Double firstNumber,Double secondNumber,Character operation){
+		switch(operation){
+			case '+':
+				return firstNumber+secondNumber;
+			case '-':
+				return firstNumber-secondNumber;
+			case '*':
+				return firstNumber*secondNumber;
+			case '/':
+				return firstNumber/secondNumber;
+			default:
+				return null;
+		}
 	}
 }

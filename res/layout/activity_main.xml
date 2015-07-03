@@ -8,74 +8,147 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@android:color/background_light"
+    android:background="@android:color/background_dark"
     tools:context="com.pangeneral.calculator.MainActivity" >
-    <EditText android:id="@+id/Et_result"
+    <TextView android:id="@+id/Et_result"
 	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:inputType="number" 
-	    android:text="@string/zero">
-	</EditText>
-	<TableLayout android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	    android:gravity="center_horizontal">
-	    <TableRow>
+	    android:layout_height="0dp"
+	    android:inputType="none"
+	    android:singleLine="false"
+	    android:lines="2"
+	    android:textSize="30sp"
+	    android:textColor="@color/red"
+	    android:gravity="right"
+	    android:text="@string/zero"
+	    android:layout_weight="1"
+	    android:background="@drawable/textview_border">
+    </TextView>
+	<LinearLayout android:id="@+id/Llo_Button" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="0dp"
+	    android:gravity="center_horizontal"
+	    android:layout_weight="5"
+	    android:orientation="vertical">
+	   	<LinearLayout android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent"
+	    	android:orientation="horizontal">
+	        <Button android:id="@+id/Btn_Cancel"
+	            android:text="@string/cancel"
+	            android:layout_width="fill_parent"
+	    		android:layout_height="fill_parent">
+	        </Button>
+	      	<Button android:id="@+id/Btn_Initial"
+	            android:text="@string/initial"
+	            android:layout_width="fill_parent"
+	    		android:layout_height="fill_parent">
+	        </Button>
+	    </LinearLayout>
+	    <LinearLayout android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent"
+	    	android:orientation="horizontal">
 	        <Button android:id="@+id/Btn_Seven"
-	            android:text="@string/seven">
+	            android:text="@string/seven"
+	            android:layout_width="fill_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
 	      	<Button android:id="@+id/Btn_Eight"
-	            android:text="@string/eight">
+	            android:text="@string/eight"
+	            android:layout_width="fill_parent"
+	    		android:layout_height="fill_parent"
+	            >
 	        </Button>
 	        <Button android:id="@+id/Btn_Nine"
-	            android:text="@string/nine">
+	            android:text="@string/nine"
+	            android:layout_width="fill_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
 	        <Button android:id="@+id/Btn_Mutiply"
-	            android:text="@string/mutiply">
+	            android:text="@string/mutiply"
+	            android:layout_width="fill_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
-	    </TableRow>
-	    <TableRow>
+	    </LinearLayout>
+	    <LinearLayout android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent"
+	    	android:orientation="horizontal"
+	    	>
 	        <Button android:id="@+id/Btn_Four"
-	            android:text="@string/four">
+	            android:text="@string/four"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
 	      	<Button android:id="@+id/Btn_Five"
-	            android:text="@string/five">
+	            android:text="@string/five"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
 	        <Button android:id="@+id/Btn_Six"
-	            android:text="@string/six">
+	            android:text="@string/six"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
 	        <Button android:id="@+id/Btn_Minus"
-	            android:text="@string/minus">
+	            android:text="@string/minus"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
-	    </TableRow>
-	    <TableRow>
+	    </LinearLayout>
+	    <LinearLayout android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent"
+	    	android:orientation="horizontal">
 	        <Button android:id="@+id/Btn_One"
-	            android:text="@string/one">
+	            android:text="@string/one"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
 	      	<Button android:id="@+id/Btn_Two"
-	            android:text="@string/two">
+	            android:text="@string/two"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
 	        <Button android:id="@+id/Btn_Three"
-	            android:text="@string/three">
+	            android:text="@string/three"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
 	        <Button android:id="@+id/Btn_Plus"
-	            android:text="@string/plus">
+	            android:text="@string/plus"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
-	    </TableRow>
-	    <TableRow>
+	    </LinearLayout>
+	    <LinearLayout android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent"
+	    	android:orientation="horizontal">
 	        <Button android:id="@+id/Btn_Zero"
-	            android:text="@string/zero">
+	            android:text="@string/zero"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
 	      	<Button android:id="@+id/Btn_Point"
-	            android:text="@string/point">
+	            android:text="@string/point"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
 	        <Button android:id="@+id/Btn_Divine"
-	            android:text="@string/divine">
+	            android:text="@string/divine"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent">
 	        </Button>
 	        <Button android:id="@+id/Btn_Equal"
-	            android:text="@string/equal">
+	            android:text="@string/equal"
+	            android:layout_width="match_parent"
+	    		android:layout_height="fill_parent"
+	    		>
 	        </Button>
-	    </TableRow>
-	</TableLayout>
+	    </LinearLayout>
+	    <LinearLayout android:layout_width="fill_parent"
+		    android:layout_height="0dp"
+		    android:gravity="center_horizontal"
+		    android:layout_weight="40"
+		    android:orientation="vertical">
+	    </LinearLayout>
+	</LinearLayout>
 
 
 </LinearLayout>
